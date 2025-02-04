@@ -55,7 +55,7 @@ export const CreateProjectButton = () => {
       }}
     >
       <DialogTrigger asChild>
-        <button className="size-[60px] group hover:bg-blue-500 bg-neutral-700 rounded-[50%] hover:rounded-[35%] transition-all ease-linear duration-150 delay-0">
+        <button className="size-[50px] group hover:bg-white bg-neutral-700 rounded-[50%] hover:rounded-[35%] transition-all ease-linear duration-150 delay-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -63,14 +63,14 @@ export const CreateProjectButton = () => {
             height={35}
             color={"#000000"}
             fill={"none"}
-            className="mx-auto text-blue-500 group-hover:text-neutral-700 transition-all ease-linear duration-150 delay-0"
+            className="mx-auto text-muted-foreground group-hover:text-neutral-700 transition-all ease-linear duration-150 delay-0"
           >
             <path d="M12 4V20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M4 12H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] p-4">
         <DialogHeader>
           <DialogTitle>
             Create New Project
@@ -80,7 +80,7 @@ export const CreateProjectButton = () => {
           </DialogDescription>
         </DialogHeader>
         <div className="overflow-hidden">
-          {step === 0 && <StepOne nextStep={nextStep} closeModal={closeModal} />}
+          {step === 0 && <StepOne nextStep={nextStep} />}
           {step === 1 && <CreateProject changeStep={setStep} />}
           {/* {step === 1 && <StepTwo prevStep={prevStep} closeModal={closeModal} />} */}
           {/* {step === 2 && <StepThree closeModal={closeModal} />} */}
@@ -104,7 +104,7 @@ const CreateProject = ({changeStep}: {changeStep :(step: number) => void}) => {
 }
 
 
-function StepOne({ nextStep, closeModal }: { nextStep: () => void; closeModal: () => void }) {
+function StepOne({ nextStep }: { nextStep: () => void }) {
   return (
     <div className="flex flex-col gap-4">
       <Button onClick={() => nextStep()}>Create a Project</Button>
@@ -116,11 +116,6 @@ function StepOne({ nextStep, closeModal }: { nextStep: () => void; closeModal: (
       >
         Join a Project
       </Button>
-      <DialogFooter>
-        <Button variant="secondary" onClick={closeModal}>
-          Cancel
-        </Button>
-      </DialogFooter>
     </div>
   )
 }

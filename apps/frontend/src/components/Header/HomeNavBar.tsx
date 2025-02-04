@@ -19,7 +19,7 @@ const HomeNavBar = () => {
 
 const NavButton = ({name}: {name: string}) => {
   return (
-    <button className="hover:bg-neutral-500 rounded-lg px-2 py-1">{name}</button>
+    <button className="hover:bg-neutral-500 rounded-lg px-2 py-1 text-xs tracking-wide text-muted-foreground uppercase">{name}</button>
   )
 }
 

@@ -67,7 +67,7 @@ const ProjectLink = ({ project }: { project: ProjectLinkProps }) => {
             <div className="h-[10px] group-hover:h-[50%] transition-all ease-linear absolute top-[50%] -translate-x-[50%] -translate-y-[50%] z-50 w-[10px] bg-white rounded-full" />
             <Link href={!project.channel ? `/p` : `/p/projects/${project.id}/${project.channel}`} className="rounded-[50%] hover:rounded-[35%]">
               <Avatar
-                className="size-[60px] mx-auto rounded-[50%] hover:rounded-[35%] transition-all ease-linear duration-150 delay-0"
+                className="size-[50px] mx-auto rounded-[50%] hover:rounded-[35%] transition-all ease-linear duration-150 delay-0"
               >
                 <AvatarImage src={project.image} alt={project.name} />
                 <AvatarFallback>{project.name}</AvatarFallback>
@@ -75,8 +75,8 @@ const ProjectLink = ({ project }: { project: ProjectLinkProps }) => {
             </Link>
           </div>
         </TooltipTrigger>
-        <TooltipContent side="right" >
-          <p className="text-base">{project.name}</p>
+        <TooltipContent side="right" className="bg-back-four p-1 text-text-hovered text-xs rounded-[5px] px-2 py-1" >
+          <p className="">{project.name}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
